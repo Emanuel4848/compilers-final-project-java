@@ -1,0 +1,29 @@
+package codigo;
+
+import java_cup.runtime.Symbol;
+
+parser code
+{:
+    private Symbol s;
+
+    public void syntax_error(Symbol s) {
+        this.s = s;
+    }
+    
+    public Symbol getS() {
+        return this.s;
+    }
+:};
+
+terminal Tipo, Igual, Suma, Resta, Multiplicacion, Division, Parentesis_a,
+    Parentesis_c, P_coma, Identificador, Numero, ERROR;
+non terminal S, E, T, F;
+
+start with S;
+S ::= Tipo Identificador Igual E P_coma;
+
+E ::= E Suma T | E Resta T | T;
+
+T ::= T Multiplicacion F | T Division F |F;
+
+F ::= Parentesis_a E Parentesis_c | Numero;
