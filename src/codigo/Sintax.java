@@ -31,10 +31,11 @@ public class Sintax extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\012\000\002\002\004\000\002\002\007\000\002\003" +
-    "\005\000\002\003\005\000\002\003\003\000\002\004\005" +
-    "\000\002\004\005\000\002\004\003\000\002\005\005\000" +
-    "\002\005\003" });
+    "\000\015\000\002\002\004\000\002\002\004\000\002\002" +
+    "\003\000\002\003\007\000\002\004\005\000\002\005\003" +
+    "\000\002\005\003\000\002\005\003\000\002\005\003\000" +
+    "\002\005\003\000\002\006\003\000\002\006\003\000\002" +
+    "\006\003" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -42,25 +43,19 @@ public class Sintax extends java_cup.runtime.lr_parser {
   /** Parse-action table. */
   protected static final short[][] _action_table = 
     unpackFromStrings(new String[] {
-    "\000\026\000\004\004\004\001\002\000\004\015\007\001" +
-    "\002\000\004\002\006\001\002\000\004\002\001\001\002" +
-    "\000\004\005\010\001\002\000\006\012\012\016\011\001" +
-    "\002\000\016\006\ufff8\007\ufff8\010\ufff8\011\ufff8\013\ufff8" +
-    "\014\ufff8\001\002\000\006\012\012\016\011\001\002\000" +
-    "\016\006\ufffd\007\ufffd\010\023\011\022\013\ufffd\014\ufffd" +
-    "\001\002\000\016\006\ufffa\007\ufffa\010\ufffa\011\ufffa\013" +
-    "\ufffa\014\ufffa\001\002\000\010\006\020\007\017\014\016" +
-    "\001\002\000\004\002\000\001\002\000\006\012\012\016" +
-    "\011\001\002\000\006\012\012\016\011\001\002\000\016" +
-    "\006\uffff\007\uffff\010\023\011\022\013\uffff\014\uffff\001" +
-    "\002\000\006\012\012\016\011\001\002\000\006\012\012" +
-    "\016\011\001\002\000\016\006\ufffc\007\ufffc\010\ufffc\011" +
-    "\ufffc\013\ufffc\014\ufffc\001\002\000\016\006\ufffb\007\ufffb" +
-    "\010\ufffb\011\ufffb\013\ufffb\014\ufffb\001\002\000\016\006" +
-    "\ufffe\007\ufffe\010\023\011\022\013\ufffe\014\ufffe\001\002" +
-    "\000\010\006\020\007\017\013\030\001\002\000\016\006" +
-    "\ufff9\007\ufff9\010\ufff9\011\ufff9\013\ufff9\014\ufff9\001\002" +
-    "" });
+    "\000\025\000\004\004\006\001\002\000\006\002\uffff\004" +
+    "\uffff\001\002\000\006\002\027\004\006\001\002\000\004" +
+    "\005\007\001\002\000\004\010\010\001\002\000\014\014" +
+    "\015\015\014\016\021\017\016\020\020\001\002\000\004" +
+    "\006\012\001\002\000\004\007\013\001\002\000\006\002" +
+    "\ufffe\004\ufffe\001\002\000\010\011\ufffb\012\ufffb\013\ufffb" +
+    "\001\002\000\010\011\ufffc\012\ufffc\013\ufffc\001\002\000" +
+    "\010\011\ufff9\012\ufff9\013\ufff9\001\002\000\010\011\022" +
+    "\012\024\013\025\001\002\000\010\011\ufff8\012\ufff8\013" +
+    "\ufff8\001\002\000\010\011\ufffa\012\ufffa\013\ufffa\001\002" +
+    "\000\004\006\ufff7\001\002\000\004\006\ufffd\001\002\000" +
+    "\004\006\ufff6\001\002\000\004\006\ufff5\001\002\000\006" +
+    "\002\000\004\000\001\002\000\004\002\001\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -68,15 +63,14 @@ public class Sintax extends java_cup.runtime.lr_parser {
   /** <code>reduce_goto</code> table. */
   protected static final short[][] _reduce_table = 
     unpackFromStrings(new String[] {
-    "\000\026\000\004\002\004\001\001\000\002\001\001\000" +
-    "\002\001\001\000\002\001\001\000\002\001\001\000\010" +
-    "\003\014\004\012\005\013\001\001\000\002\001\001\000" +
-    "\010\003\026\004\012\005\013\001\001\000\002\001\001" +
+    "\000\025\000\006\002\004\003\003\001\001\000\002\001" +
+    "\001\000\004\003\025\001\001\000\002\001\001\000\004" +
+    "\004\010\001\001\000\004\005\016\001\001\000\002\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
+    "\000\002\001\001\000\002\001\001\000\004\006\022\001" +
+    "\001\000\002\001\001\000\002\001\001\000\002\001\001" +
     "\000\002\001\001\000\002\001\001\000\002\001\001\000" +
-    "\006\004\025\005\013\001\001\000\006\004\020\005\013" +
-    "\001\001\000\002\001\001\000\004\005\024\001\001\000" +
-    "\004\005\023\001\001\000\002\001\001\000\002\001\001" +
-    "\000\002\001\001\000\002\001\001\000\002\001\001" });
+    "\002\001\001\000\002\001\001" });
 
   /** Access to <code>reduce_goto</code> table. */
   public short[][] reduce_table() {return _reduce_table;}
@@ -165,83 +159,110 @@ class CUP$Sintax$actions {
           return CUP$Sintax$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 1: // S ::= Tipo Identificador Igual E P_coma 
+          case 1: // S ::= S I 
             {
               Object RESULT =null;
 
-              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("S",0, ((java_cup.runtime.Symbol)CUP$Sintax$stack.elementAt(CUP$Sintax$top-4)), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
+              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("S",0, ((java_cup.runtime.Symbol)CUP$Sintax$stack.elementAt(CUP$Sintax$top-1)), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
             }
           return CUP$Sintax$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 2: // E ::= E Suma T 
+          case 2: // S ::= I 
             {
               Object RESULT =null;
 
-              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("E",1, ((java_cup.runtime.Symbol)CUP$Sintax$stack.elementAt(CUP$Sintax$top-2)), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
+              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("S",0, ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
             }
           return CUP$Sintax$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 3: // E ::= E Resta T 
+          case 3: // I ::= IF Parentesis_a C Parentesis_c P_coma 
             {
               Object RESULT =null;
 
-              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("E",1, ((java_cup.runtime.Symbol)CUP$Sintax$stack.elementAt(CUP$Sintax$top-2)), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
+              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("I",1, ((java_cup.runtime.Symbol)CUP$Sintax$stack.elementAt(CUP$Sintax$top-4)), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
             }
           return CUP$Sintax$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 4: // E ::= T 
+          case 4: // C ::= Identificador O V 
             {
               Object RESULT =null;
 
-              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("E",1, ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
+              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("C",2, ((java_cup.runtime.Symbol)CUP$Sintax$stack.elementAt(CUP$Sintax$top-2)), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
             }
           return CUP$Sintax$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 5: // T ::= T Multiplicacion F 
+          case 5: // O ::= Igual_Igual 
             {
               Object RESULT =null;
 
-              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("T",2, ((java_cup.runtime.Symbol)CUP$Sintax$stack.elementAt(CUP$Sintax$top-2)), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
+              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("O",3, ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
             }
           return CUP$Sintax$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 6: // T ::= T Division F 
+          case 6: // O ::= Menor 
             {
               Object RESULT =null;
 
-              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("T",2, ((java_cup.runtime.Symbol)CUP$Sintax$stack.elementAt(CUP$Sintax$top-2)), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
+              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("O",3, ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
             }
           return CUP$Sintax$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 7: // T ::= F 
+          case 7: // O ::= Menor_Igual 
             {
               Object RESULT =null;
 
-              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("T",2, ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
+              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("O",3, ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
             }
           return CUP$Sintax$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 8: // F ::= Parentesis_a E Parentesis_c 
+          case 8: // O ::= Mayor 
             {
               Object RESULT =null;
 
-              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("F",3, ((java_cup.runtime.Symbol)CUP$Sintax$stack.elementAt(CUP$Sintax$top-2)), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
+              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("O",3, ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
             }
           return CUP$Sintax$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 9: // F ::= Numero 
+          case 9: // O ::= Mayor_Igual 
             {
               Object RESULT =null;
 
-              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("F",3, ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
+              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("O",3, ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
+            }
+          return CUP$Sintax$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 10: // V ::= Numero 
+            {
+              Object RESULT =null;
+
+              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("V",4, ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
+            }
+          return CUP$Sintax$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 11: // V ::= TRUE 
+            {
+              Object RESULT =null;
+
+              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("V",4, ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
+            }
+          return CUP$Sintax$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 12: // V ::= FALSE 
+            {
+              Object RESULT =null;
+
+              CUP$Sintax$result = parser.getSymbolFactory().newSymbol("V",4, ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), ((java_cup.runtime.Symbol)CUP$Sintax$stack.peek()), RESULT);
             }
           return CUP$Sintax$result;
 

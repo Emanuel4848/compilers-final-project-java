@@ -8,34 +8,38 @@ package codigo;
 /** CUP generated class containing symbol constants. */
 public class sym {
   /* terminals */
-  public static final int Tipo = 2;
-  public static final int Multiplicacion = 6;
-  public static final int Parentesis_c = 9;
-  public static final int Division = 7;
-  public static final int ERROR = 13;
-  public static final int Parentesis_a = 8;
+  public static final int Menor = 11;
+  public static final int Parentesis_c = 4;
+  public static final int TRUE = 8;
+  public static final int ERROR = 15;
+  public static final int Parentesis_a = 3;
   public static final int EOF = 0;
-  public static final int P_coma = 10;
-  public static final int Suma = 4;
-  public static final int Identificador = 11;
+  public static final int P_coma = 5;
+  public static final int IF = 2;
+  public static final int FALSE = 9;
+  public static final int Identificador = 6;
   public static final int error = 1;
-  public static final int Igual = 3;
-  public static final int Numero = 12;
-  public static final int Resta = 5;
+  public static final int Mayor = 13;
+  public static final int Menor_Igual = 12;
+  public static final int Igual_Igual = 10;
+  public static final int Numero = 7;
+  public static final int Mayor_Igual = 14;
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
-  "Tipo",
-  "Igual",
-  "Suma",
-  "Resta",
-  "Multiplicacion",
-  "Division",
+  "IF",
   "Parentesis_a",
   "Parentesis_c",
   "P_coma",
   "Identificador",
   "Numero",
+  "TRUE",
+  "FALSE",
+  "Igual_Igual",
+  "Menor",
+  "Menor_Igual",
+  "Mayor",
+  "Mayor_Igual",
   "ERROR"
   };
 }

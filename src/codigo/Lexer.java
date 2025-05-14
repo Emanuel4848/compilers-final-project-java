@@ -62,11 +62,11 @@ class Lexer {
 
   private static final String ZZ_CMAP_BLOCKS_PACKED_0 =
     "\11\0\1\1\1\2\2\3\1\1\22\0\1\1\7\0"+
-    "\1\4\1\5\1\6\1\7\1\1\1\10\1\0\1\11"+
-    "\12\12\1\0\1\13\1\0\1\14\3\0\32\15\4\0"+
-    "\1\15\1\0\1\16\4\15\1\17\2\15\1\20\2\15"+
-    "\1\21\1\15\1\22\1\23\4\15\1\24\6\15\12\0"+
-    "\1\3\u01a2\0\2\3\326\0\u0100\3";
+    "\1\4\1\5\6\0\12\6\1\0\1\7\1\10\1\11"+
+    "\1\12\2\0\32\13\4\0\1\13\1\0\1\14\3\13"+
+    "\1\15\1\16\2\13\1\17\2\13\1\20\5\13\1\21"+
+    "\1\22\1\23\1\24\5\13\12\0\1\3\u01a2\0\2\3"+
+    "\326\0\u0100\3";
 
   private static int [] zzUnpackcmap_blocks() {
     int [] result = new int[1024];
@@ -94,11 +94,11 @@ class Lexer {
 
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7"+
-    "\1\10\1\11\1\12\1\13\1\14\3\15\1\0\2\15"+
-    "\1\0\1\15\1\16\1\12";
+    "\1\10\1\1\1\11\4\12\1\13\1\14\1\15\1\12"+
+    "\1\16\4\12\1\17\1\20";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[23];
+    int [] result = new int[26];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -123,12 +123,13 @@ class Lexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\25\0\52\0\25\0\77\0\25\0\25\0\25"+
-    "\0\25\0\25\0\124\0\25\0\25\0\151\0\176\0\223"+
-    "\0\250\0\275\0\322\0\347\0\374\0\151\0\25";
+    "\0\0\0\25\0\52\0\25\0\25\0\25\0\77\0\25"+
+    "\0\124\0\151\0\176\0\223\0\250\0\275\0\322\0\25"+
+    "\0\25\0\25\0\347\0\223\0\374\0\u0111\0\u0126\0\u013b"+
+    "\0\223\0\223";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[23];
+    int [] result = new int[26];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -152,16 +153,18 @@ class Lexer {
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\1\3\1\4\1\0\1\5\1\6\1\7\1\10"+
-    "\1\11\1\12\1\13\1\14\1\15\2\16\1\17\1\20"+
-    "\4\16\26\0\1\3\33\0\1\21\26\0\1\13\24\0"+
-    "\1\16\2\0\10\16\12\0\1\16\2\0\4\16\1\22"+
-    "\3\16\12\0\1\16\2\0\5\16\1\23\2\16\12\0"+
-    "\1\24\24\0\1\16\2\0\6\16\1\25\1\16\12\0"+
-    "\1\16\2\0\7\16\1\26\5\0\1\27\4\0\1\24"+
-    "\24\0\1\16\2\0\1\16\1\23\6\16";
+    "\1\11\1\12\1\13\3\14\1\15\1\16\3\14\1\17"+
+    "\1\14\26\0\1\3\31\0\1\7\27\0\1\20\24\0"+
+    "\1\21\24\0\1\22\21\0\1\14\4\0\12\14\6\0"+
+    "\1\14\4\0\1\14\1\23\10\14\6\0\1\14\4\0"+
+    "\3\14\1\24\6\14\6\0\1\14\4\0\6\14\1\25"+
+    "\3\14\6\0\1\14\4\0\5\14\1\26\4\14\6\0"+
+    "\1\14\4\0\11\14\1\27\6\0\1\14\4\0\7\14"+
+    "\1\30\2\14\6\0\1\14\4\0\2\14\1\31\7\14"+
+    "\6\0\1\14\4\0\2\14\1\32\7\14";
 
   private static int [] zzUnpacktrans() {
-    int [] result = new int[273];
+    int [] result = new int[336];
     int offset = 0;
     offset = zzUnpacktrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -204,11 +207,11 @@ class Lexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\1\1\1\11\1\1\5\11\1\1\2\11"+
-    "\3\1\1\0\2\1\1\0\2\1\1\11";
+    "\1\0\1\11\1\1\3\11\1\1\1\11\7\1\3\11"+
+    "\10\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[23];
+    int [] result = new int[26];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -648,72 +651,82 @@ class Lexer {
             { return ERROR;
             }
           // fall through
-          case 15: break;
+          case 17: break;
           case 2:
             { /*Ignore*/
             }
           // fall through
-          case 16: break;
-          case 3:
-            { lexeme=yytext(); return Linea;
-            }
-          // fall through
-          case 17: break;
-          case 4:
-            { lexeme=yytext(); return Parentesis_a;
-            }
-          // fall through
           case 18: break;
-          case 5:
-            { lexeme=yytext(); return Parentesis_c;
+          case 3:
+            { lexeme = yytext(); return Linea;
             }
           // fall through
           case 19: break;
-          case 6:
-            { lexeme=yytext(); return Multiplicacion;
+          case 4:
+            { lexeme = yytext(); return Parentesis_a;
             }
           // fall through
           case 20: break;
-          case 7:
-            { lexeme=yytext(); return Suma;
+          case 5:
+            { lexeme = yytext(); return Parentesis_c;
             }
           // fall through
           case 21: break;
-          case 8:
-            { lexeme=yytext(); return Resta;
+          case 6:
+            { lexeme = yytext(); return Numero;
             }
           // fall through
           case 22: break;
-          case 9:
-            { lexeme=yytext(); return Division;
+          case 7:
+            { lexeme = yytext(); return P_coma;
             }
           // fall through
           case 23: break;
-          case 10:
-            { lexeme=yytext(); return Numero;
+          case 8:
+            { lexeme = yytext(); return Menor;
             }
           // fall through
           case 24: break;
-          case 11:
-            { lexeme=yytext(); return P_coma;
+          case 9:
+            { lexeme = yytext(); return Mayor;
             }
           // fall through
           case 25: break;
-          case 12:
-            { lexeme=yytext(); return Igual;
+          case 10:
+            { lexeme = yytext(); return Identificador;
             }
           // fall through
           case 26: break;
-          case 13:
-            { lexeme=yytext(); return Identificador;
+          case 11:
+            { lexeme = yytext(); return Menor_Igual;
             }
           // fall through
           case 27: break;
-          case 14:
-            { lexeme=yytext(); return Tipo;
+          case 12:
+            { lexeme = yytext(); return Igual_Igual;
             }
           // fall through
           case 28: break;
+          case 13:
+            { lexeme = yytext(); return Mayor_Igual;
+            }
+          // fall through
+          case 29: break;
+          case 14:
+            { lexeme = yytext(); return IF;
+            }
+          // fall through
+          case 30: break;
+          case 15:
+            { lexeme = yytext(); return TRUE;
+            }
+          // fall through
+          case 31: break;
+          case 16:
+            { lexeme = yytext(); return FALSE;
+            }
+          // fall through
+          case 32: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

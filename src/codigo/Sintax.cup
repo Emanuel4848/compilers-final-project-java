@@ -2,8 +2,7 @@ package codigo;
 
 import java_cup.runtime.Symbol;
 
-parser code
-{:
+parser code {:
     private Symbol s;
 
     public void syntax_error(Symbol s) {
@@ -15,15 +14,32 @@ parser code
     }
 :};
 
-terminal Tipo, Igual, Suma, Resta, Multiplicacion, Division, Parentesis_a,
-    Parentesis_c, P_coma, Identificador, Numero, ERROR;
-non terminal S, E, T, F;
+terminal
+    IF,
+    Parentesis_a,
+    Parentesis_c,
+    P_coma,
+    Identificador,
+    Numero,
+    TRUE,
+    FALSE,
+    Igual_Igual,
+    Menor,
+    Menor_Igual,
+    Mayor,
+    Mayor_Igual,
+    ERROR;
+
+
+non terminal S,I, C, O, V;
 
 start with S;
-S ::= Tipo Identificador Igual E P_coma;
+S ::= S I | I;
 
-E ::= E Suma T | E Resta T | T;
+I ::= IF Parentesis_a C Parentesis_c P_coma;
 
-T ::= T Multiplicacion F | T Division F |F;
+C ::= Identificador O V;
 
-F ::= Parentesis_a E Parentesis_c | Numero;
+O ::= Igual_Igual | Menor | Menor_Igual | Mayor | Mayor_Igual;
+
+V ::= Numero | TRUE | FALSE;

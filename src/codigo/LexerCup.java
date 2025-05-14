@@ -33,12 +33,12 @@ class LexerCup implements java_cup.runtime.Scanner {
   private static final char [] ZZ_CMAP = {
      0,  0,  0,  0,  0,  0,  0,  0,  0,  1,  1,  2,  2,  1,  0,  0, 
      0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 
-     1,  0,  0,  0,  0,  0,  0,  0,  3,  4,  5,  6,  1,  7,  0,  8, 
-     9,  9,  9,  9,  9,  9,  9,  9,  9,  9,  0, 10,  0, 11,  0,  0, 
-     0, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 
-    12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12,  0,  0,  0,  0, 12, 
-     0, 13, 12, 12, 12, 12, 14, 12, 12, 15, 12, 12, 16, 12, 17, 18, 
-    12, 12, 12, 12, 19, 12, 12, 12, 12, 12, 12,  0,  0,  0,  0,  0, 
+     1,  0,  0,  0,  0,  0,  0,  0,  3,  4,  0,  0,  1,  0,  0,  0, 
+     5,  5,  5,  5,  5,  5,  5,  5,  5,  5,  0,  6,  7,  8,  9,  0, 
+     0, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 
+    10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,  0,  0,  0,  0, 10, 
+     0, 11, 10, 10, 10, 12, 13, 10, 10, 14, 10, 10, 15, 10, 10, 10, 
+    10, 10, 16, 17, 18, 19, 10, 10, 10, 10, 10,  0,  0,  0,  0,  0, 
      0,  0,  0,  0,  0,  2,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 
      0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 
      0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0, 
@@ -56,11 +56,11 @@ class LexerCup implements java_cup.runtime.Scanner {
 
   private static final String ZZ_ACTION_PACKED_0 =
     "\1\0\1\1\1\2\1\3\1\4\1\5\1\6\1\7"+
-    "\1\10\1\11\1\12\1\13\3\14\1\0\2\14\1\0"+
-    "\1\14\1\15\1\11";
+    "\1\1\1\10\4\11\1\12\1\13\1\14\1\11\1\15"+
+    "\4\11\1\16\1\17";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[22];
+    int [] result = new int[25];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -85,12 +85,13 @@ class LexerCup implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\24\0\50\0\74\0\24\0\24\0\24\0\24"+
-    "\0\24\0\120\0\24\0\24\0\144\0\170\0\214\0\240"+
-    "\0\264\0\310\0\334\0\360\0\144\0\24";
+    "\0\0\0\24\0\50\0\24\0\24\0\74\0\24\0\120"+
+    "\0\144\0\170\0\214\0\240\0\264\0\310\0\24\0\24"+
+    "\0\24\0\334\0\214\0\360\0\u0104\0\u0118\0\u012c\0\214"+
+    "\0\214";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[22];
+    int [] result = new int[25];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -114,16 +115,16 @@ class LexerCup implements java_cup.runtime.Scanner {
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\1\3\1\0\1\4\1\5\1\6\1\7\1\10"+
-    "\1\11\1\12\1\13\1\14\2\15\1\16\1\17\4\15"+
-    "\25\0\1\3\31\0\1\20\25\0\1\12\23\0\1\15"+
-    "\2\0\10\15\11\0\1\15\2\0\4\15\1\21\3\15"+
-    "\11\0\1\15\2\0\5\15\1\22\2\15\11\0\1\23"+
-    "\23\0\1\15\2\0\6\15\1\24\1\15\11\0\1\15"+
-    "\2\0\7\15\1\25\4\0\1\26\4\0\1\23\23\0"+
-    "\1\15\2\0\1\15\1\22\6\15";
+    "\1\11\1\12\3\13\1\14\1\15\3\13\1\16\1\13"+
+    "\25\0\1\3\27\0\1\6\26\0\1\17\23\0\1\20"+
+    "\23\0\1\21\25\0\12\13\12\0\1\13\1\22\10\13"+
+    "\12\0\3\13\1\23\6\13\12\0\6\13\1\24\3\13"+
+    "\12\0\5\13\1\25\4\13\12\0\11\13\1\26\12\0"+
+    "\7\13\1\27\2\13\12\0\2\13\1\30\7\13\12\0"+
+    "\2\13\1\31\7\13";
 
   private static int [] zzUnpacktrans() {
-    int [] result = new int[260];
+    int [] result = new int[320];
     int offset = 0;
     offset = zzUnpacktrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -166,11 +167,11 @@ class LexerCup implements java_cup.runtime.Scanner {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\2\1\5\11\1\1\2\11\3\1\1\0"+
-    "\2\1\1\0\2\1\1\11";
+    "\1\0\1\11\1\1\2\11\1\1\1\11\7\1\3\11"+
+    "\10\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[22];
+    int [] result = new int[25];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -680,67 +681,77 @@ class LexerCup implements java_cup.runtime.Scanner {
             { return symbol(sym.ERROR, yytext());
             }
           // fall through
-          case 14: break;
+          case 16: break;
           case 2:
             { /*Ignore*/
             }
           // fall through
-          case 15: break;
+          case 17: break;
           case 3:
             { return symbol(sym.Parentesis_a, yytext());
             }
           // fall through
-          case 16: break;
+          case 18: break;
           case 4:
             { return symbol(sym.Parentesis_c, yytext());
             }
           // fall through
-          case 17: break;
-          case 5:
-            { return symbol(sym.Multiplicacion, yytext());
-            }
-          // fall through
-          case 18: break;
-          case 6:
-            { return symbol(sym.Suma, yytext());
-            }
-          // fall through
           case 19: break;
-          case 7:
-            { return symbol(sym.Resta, yytext());
-            }
-          // fall through
-          case 20: break;
-          case 8:
-            { return symbol(sym.Division, yytext());
-            }
-          // fall through
-          case 21: break;
-          case 9:
+          case 5:
             { return symbol(sym.Numero, yytext());
             }
           // fall through
-          case 22: break;
-          case 10:
+          case 20: break;
+          case 6:
             { return symbol(sym.P_coma, yytext());
             }
           // fall through
-          case 23: break;
-          case 11:
-            { return symbol(sym.Igual, yytext());
+          case 21: break;
+          case 7:
+            { return symbol(sym.Menor, yytext());
             }
           // fall through
-          case 24: break;
-          case 12:
+          case 22: break;
+          case 8:
+            { return symbol(sym.Mayor, yytext());
+            }
+          // fall through
+          case 23: break;
+          case 9:
             { return symbol(sym.Identificador, yytext());
             }
           // fall through
+          case 24: break;
+          case 10:
+            { return symbol(sym.Menor_Igual, yytext());
+            }
+          // fall through
           case 25: break;
-          case 13:
-            { return symbol(sym.Tipo, yytext());
+          case 11:
+            { return symbol(sym.Igual_Igual, yytext());
             }
           // fall through
           case 26: break;
+          case 12:
+            { return symbol(sym.Mayor_Igual, yytext());
+            }
+          // fall through
+          case 27: break;
+          case 13:
+            { return symbol(sym.IF, yytext());
+            }
+          // fall through
+          case 28: break;
+          case 14:
+            { return symbol(sym.TRUE, yytext());
+            }
+          // fall through
+          case 29: break;
+          case 15:
+            { return symbol(sym.FALSE, yytext());
+            }
+          // fall through
+          case 30: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

@@ -53,31 +53,38 @@ public class FrmPrincipal extends javax.swing.JFrame {
                     cont++;
                     resultado += "LINEA " + cont + "\n";
                     break;
-                case Tipo:
-                    resultado += "  <Tipo de dato>\t" + lexer.lexeme + "\n";
+                case IF:
+                    resultado += "  <Palabra reservada IF>\t" + lexer.lexeme + "\n";
                     break;
                     
-                case Igual:
-                    resultado += "  <Operador igual>\t" + lexer.lexeme + "\n";
+                case TRUE:
+                    resultado += "  <Booleano TRUE>\t" + lexer.lexeme + "\n";
                     break;
                     
-                case Suma:
-                    resultado += "  <Operador suma>\t" + lexer.lexeme + "\n";
+                case FALSE:
+                    resultado += "  <Booleano FALSE>\t" + lexer.lexeme + "\n";
                     break;
                     
-                case Resta:
-                    resultado += "  <Operador resta>\t" + lexer.lexeme + "\n";
+                case Igual_Igual:
+                    resultado += "  <Operador igual igual>\t" + lexer.lexeme + "\n";
                     break;
                     
-                case Multiplicacion:
-                    resultado += "  <Operador multiplicacion>\t" + lexer.lexeme + "\n";
+                case Menor:
+                    resultado += "  <Operador menor>\t" + lexer.lexeme + "\n";
                     break;
                     
-                case Division:
-                    resultado += "  <Operador division>\t" + lexer.lexeme + "\n";
+                case Menor_Igual:
+                    resultado += "  <Operador menor igual>\t" + lexer.lexeme + "\n";
                     break;
-                    
-                    
+                
+                case Mayor:
+                    resultado += "  <Operador mayor>\t" + lexer.lexeme + "\n";
+                    break;
+                
+                case Mayor_Igual:
+                    resultado += "  <Operador mayor igual>\t" + lexer.lexeme + "\n";
+                    break;
+                                  
                 case Parentesis_a:
                     resultado += "  <Parentesis apertura>\t" + lexer.lexeme + "\n";
                     break;

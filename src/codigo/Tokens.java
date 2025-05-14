@@ -9,17 +9,20 @@ package codigo;
  * @author Emanuel
  */
 public enum Tokens {
-    Tipo,
+    
     Linea,
-    Igual,
-    Suma,
-    Resta,
-    Multiplicacion,
-    Division,
+    IF,
     Parentesis_a,
     Parentesis_c,
     P_coma,
     Identificador,
     Numero,
+    TRUE,
+    FALSE,
+    Igual_Igual,
+    Menor,
+    Menor_Igual,
+    Mayor,
+    Mayor_Igual,
     ERROR
 }
