@@ -21,23 +21,23 @@ espacio=[ \t,\r,\n]+
 %}
 %%
 
-"if"           {return symbol(sym.IF, yytext());}
-"true"         {return symbol(sym.TRUE, yytext());}
-"false"        {return symbol(sym.FALSE, yytext());}
+"if"    {return symbol(sym.IF, yytext());}
+"true"  {return symbol(sym.TRUE, yytext());}
+"false"  {return symbol(sym.FALSE, yytext());}
 
-"=="           {return symbol(sym.Igual_Igual, yytext());}
-"<="           {return symbol(sym.Menor_Igual, yytext());}
-">="           {return symbol(sym.Mayor_Igual, yytext());}
-"<"            {return symbol(sym.Menor, yytext());}
-">"            {return symbol(sym.Mayor, yytext());}
+"=="  {return symbol(sym.Igual_Igual, yytext());}
+"<="  {return symbol(sym.Menor_Igual, yytext());}
+">="  {return symbol(sym.Mayor_Igual, yytext());}
+"<"   {return symbol(sym.Menor, yytext());}
+">"   {return symbol(sym.Mayor, yytext());}
 
-"("            {return symbol(sym.Parentesis_a, yytext());}
-")"            {return symbol(sym.Parentesis_c, yytext());}
-";"            {return symbol(sym.P_coma, yytext());}
+"("   {return symbol(sym.Parentesis_a, yytext());}
+")"   {return symbol(sym.Parentesis_c, yytext());}
+";"   {return symbol(sym.P_coma, yytext());}
 
 
-{L}            {return symbol(sym.Identificador, yytext());}
-{D}+           {return symbol(sym.Numero, yytext());}
+{L}({L}|{D})* {return symbol(sym.Identificador, yytext());}
+("(-"{D}+")"|{D}+) {return symbol(sym.Numero, yytext());}
 
 {espacio}      {/*Ignore*/}
 .  {return symbol(sym.ERROR, yytext());}

@@ -12,23 +12,24 @@ espacio = [ \t\r]+
 %%
 
 {espacio} {/*Ignore*/}
-"\n"          { lexeme = yytext(); return Linea; }
+"\n"   { lexeme = yytext(); return Linea; }
 
-"if"          { lexeme = yytext(); return IF; }
-"true"        { lexeme = yytext(); return TRUE; }
-"false"       { lexeme = yytext(); return FALSE; }
+"if"     { lexeme = yytext(); return IF; }
+"true"   { lexeme = yytext(); return TRUE; }
+"false"  { lexeme = yytext(); return FALSE; }
 
-"=="          { lexeme = yytext(); return Igual_Igual; }
-"<="          { lexeme = yytext(); return Menor_Igual; }
-">="          { lexeme = yytext(); return Mayor_Igual; }
-"<"           { lexeme = yytext(); return Menor; }
-">"           { lexeme = yytext(); return Mayor; }
+"==" { lexeme = yytext(); return Igual_Igual; }
+"<=" { lexeme = yytext(); return Menor_Igual; }
+">=" { lexeme = yytext(); return Mayor_Igual; }
+"<"  { lexeme = yytext(); return Menor; }
+">"  { lexeme = yytext(); return Mayor; }
 
 
-"("           { lexeme = yytext(); return Parentesis_a; }
-")"           { lexeme = yytext(); return Parentesis_c; }
-";"           { lexeme = yytext(); return P_coma; }
+"("  { lexeme = yytext(); return Parentesis_a; }
+")"  { lexeme = yytext(); return Parentesis_c; }
+";"  { lexeme = yytext(); return P_coma; }
 
-{L}({L}|{D})* { lexeme = yytext(); return Identificador; }
-{D}+          { lexeme = yytext(); return Numero; }
+
+{L}({L}|{D})* {lexeme=yytext(); return Identificador;}
+("(-"{D}+")"|{D}+) {lexeme=yytext(); return Numero;}
 . { return ERROR; }

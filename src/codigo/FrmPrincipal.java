@@ -4,7 +4,7 @@
  */
 package codigo;
 
-import static codigo.Tokens.Igual;
+//import static codigo.Tokens.Igual;
 import static codigo.Tokens.Parentesis_a;
 import java.io.BufferedReader;
 import java.io.File;
