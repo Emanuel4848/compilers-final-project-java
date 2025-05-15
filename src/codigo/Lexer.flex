@@ -5,7 +5,7 @@ import static codigo.Tokens.*;
 %type Tokens
 L=[a-zA-Z_]+
 D=[0-9]+
-espacio = [ \t\r]+
+espacio = [ ,\t\r]+
 %{
     public String lexeme;
 %}
@@ -14,9 +14,11 @@ espacio = [ \t\r]+
 {espacio} {/*Ignore*/}
 "\n"   { lexeme = yytext(); return Linea; }
 
+
 "if"     { lexeme = yytext(); return IF; }
 "true"   { lexeme = yytext(); return TRUE; }
 "false"  { lexeme = yytext(); return FALSE; }
+
 
 "==" { lexeme = yytext(); return Igual_Igual; }
 "<=" { lexeme = yytext(); return Menor_Igual; }
@@ -25,9 +27,11 @@ espacio = [ \t\r]+
 ">"  { lexeme = yytext(); return Mayor; }
 
 
+
 "("  { lexeme = yytext(); return Parentesis_a; }
 ")"  { lexeme = yytext(); return Parentesis_c; }
 ";"  { lexeme = yytext(); return P_coma; }
+
 
 
 {L}({L}|{D})* {lexeme=yytext(); return Identificador;}

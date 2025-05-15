@@ -9,7 +9,7 @@ import java_cup.runtime.Symbol;
 %char
 L=[a-zA-Z_]+
 D=[0-9]+
-espacio=[ \t,\r,\n]+
+espacio=[ ,\t,\r,\n]+
 %{
     private Symbol symbol(int type, Object value){
         return new Symbol(type, value);
@@ -21,9 +21,11 @@ espacio=[ \t,\r,\n]+
 %}
 %%
 
+
 "if"    {return symbol(sym.IF, yytext());}
 "true"  {return symbol(sym.TRUE, yytext());}
 "false"  {return symbol(sym.FALSE, yytext());}
+
 
 "=="  {return symbol(sym.Igual_Igual, yytext());}
 "<="  {return symbol(sym.Menor_Igual, yytext());}
@@ -31,13 +33,16 @@ espacio=[ \t,\r,\n]+
 "<"   {return symbol(sym.Menor, yytext());}
 ">"   {return symbol(sym.Mayor, yytext());}
 
+
 "("   {return symbol(sym.Parentesis_a, yytext());}
 ")"   {return symbol(sym.Parentesis_c, yytext());}
 ";"   {return symbol(sym.P_coma, yytext());}
 
 
+
 {L}({L}|{D})* {return symbol(sym.Identificador, yytext());}
 ("(-"{D}+")"|{D}+) {return symbol(sym.Numero, yytext());}
+
 
 {espacio}      {/*Ignore*/}
 .  {return symbol(sym.ERROR, yytext());}

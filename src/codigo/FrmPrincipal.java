@@ -36,21 +36,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
     
     
     private void analizarLexico() throws IOException {
-        int cont = 1; //contador de líneas
+        int cont = 1; //contador de líneas que inicia en 1
         
-        String expr = (String) txtResultado.getText();
-        Lexer lexer = new Lexer(new StringReader(expr));
-        String resultado = "LINEA" + cont + "\t\tSIMBOLO\n";
+        String expr = (String) txtResultado.getText();// se obitiene el texto del area txtResultado, aca esta el texto a analizar.
+        Lexer lexer = new Lexer(new StringReader(expr)); 
+        String resultado = "LINEA" + cont + "\t\tSIMBOLO\n"; //guarda resultad lexico
         while (true){
-            Tokens token = lexer.yylex();
-            if (token == null) {
+            Tokens token = lexer.yylex(); //sig token
+            if (token == null) {          
                 txtAnalizarLex.setText(resultado);
                 return;
             }
-            
+                
             switch (token) {
                 case Linea:
-                    cont++;
+                    cont++;  
                     resultado += "LINEA " + cont + "\n";
                     break;
                 case IF:
@@ -291,9 +291,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void btnAnalizarLexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizarLexActionPerformed
         try {
             //TODO add your handling code here:
-            analizarLexico();
+            analizarLexico();  
         } catch (IOException ex) {
-            Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FrmPrincipal.class.getName()).log(Level.SEVERE, null, ex); 
         }
     
     }//GEN-LAST:event_btnAnalizarLexActionPerformed
@@ -305,35 +305,35 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void btnAnalizarSinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizarSinActionPerformed
         // TODO add your handling code here:
-        String ST = txtResultado.getText(); //variable donde se toma el valor del resultado
+        String ST = txtResultado.getText(); //obtiene texto ingresado
         
         ///////para 2 lineas:
         
-        //Esto si el texto esta vacio:
+        //por si esta vacio el texto
         if ("".equals(ST)) {
             txtAnalizarSin.setText("Texto Vacío");
         }
         
-        String[] lineas = ST.split("\n");    //se divide el texto que viene del analizador en el cambio de linea
+        String[] lineas = ST.split("\n");  //separa el texto en lineas para ir 1x1
         
         
         
         
-        //para una: Sintax s = new Sintax(new LexerCup(new StringReader(ST)));
-        Sintax s = null;    //para 2 lineas
-        int cont = 0;
+        //////para una: Sintax s = new Sintax(new LexerCup(new StringReader(ST)));
+        Sintax s = null;    
+        int cont = 0;  //contador de lineas catual
         
         
         try {
             for(String linea: lineas) {
-                cont ++;
-                s = new Sintax(new LexerCup(new StringReader(linea)));
-                s.parse();
+                cont ++; 
+                s = new Sintax(new LexerCup(new StringReader(linea))); //crea el parser que lee una sola linea
+                s.parse();  //se ejecuta el analisis sintactico
             }
             txtAnalizarSin.setText("Análisis realizado correctamente");
-           // s.parse(); agarra el texto original y lo hace tipo parse
+      
         } catch (Exception ex) {
-            Symbol sym = s.getS();    //va a traer la informacion el analisis sintactico
+            Symbol sym = s.getS();    
             txtAnalizarSin.setText("Error de sintaxis en linea: " + cont + ",Texto: \"" + sym.value + "\"");
         }
     }//GEN-LAST:event_btnAnalizarSinActionPerformed
